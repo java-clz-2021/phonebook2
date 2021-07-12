@@ -17,11 +17,11 @@
 	<!-- 
 	http://localhost:8088/phonebook1/insert.jsp?name=황일영&hp=010-2222-2222&company=02-2222-2222
 	 -->
-	<form action="./insert.jsp" method="post">
+	<form action="/phonebook2/pbc" method="get">
 		이름(name): <input type="text" name="name" value=""> <br>
 		핸드폰(hp): <input type="text" name="hp" value=""> <br>
 		회사(company): <input type="text" name="company" value=""> <br>
-		
+		<input type="text" name="action" value="insert"> <br>
 		<button type="submit">등록</button>
 	</form>
 	

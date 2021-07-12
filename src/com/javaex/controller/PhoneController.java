@@ -57,6 +57,27 @@ public class PhoneController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/writeForm.jsp");
 			rd.forward(request, response);
 			
+		}else if("insert".equals(action)) {
+			System.out.println("[저장]");
+			
+			//dao --> 저장
+			//파라미터를 꺼낸다 name, hp, company,
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp");
+			String company = request.getParameter("company");
+			
+			//vo 로 묶어준다
+			PersonVo personVo = new PersonVo(name, hp, company);
+			System.out.println(personVo);
+			
+			//dao personInsert(vo)
+			PhoneDao phoneDao = new PhoneDao();
+			int count = phoneDao.personInsert(personVo);
+			
+			//리다이렉트
+			response.sendRedirect("/phonebook2/pbc?action=list");
+			
+			
 		}
 		
 		
