@@ -53,5 +53,6 @@
 		<br>
 	<%} %>
 	
+	<a href="./pbc?action=wform">전화번호 작성</a>
 </body>
 </html>
